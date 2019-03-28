@@ -28,7 +28,7 @@ class ViewController: UIViewController {
     @IBAction func btnPlay(_ sender: Any) {
         //Timer작동
         if(isAnimating == true) { return }
-        else {isAnimating = false}
+        else {isAnimating = true}
         
         myTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(doAnimation), userInfo: nil, repeats: true)
         
