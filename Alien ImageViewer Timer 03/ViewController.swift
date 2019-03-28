@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var AlienImageView: UIImageView!
     @IBOutlet weak var CountLabel: UILabel!
     var count = 1
+    var isAnimating = false
     //Timer 객체 생성
     var myTimer = Timer()
     
@@ -26,12 +27,17 @@ class ViewController: UIViewController {
 
     @IBAction func btnPlay(_ sender: Any) {
         //Timer작동
+        if(isAnimating == true) { return }
+        else {isAnimating = false}
+        
         myTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(doAnimation), userInfo: nil, repeats: true)
+        
         
     }
     
     @IBAction func btnPause(_ sender: Any) {
         myTimer.invalidate()
+        isAnimating = false
         
     }
     
