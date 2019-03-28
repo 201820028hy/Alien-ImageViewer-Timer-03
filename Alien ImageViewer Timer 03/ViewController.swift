@@ -44,6 +44,7 @@ class ViewController: UIViewController {
     @IBAction func btnStop(_ sender: Any) {
         myTimer.invalidate()
         count = 0
+        isAnimating  = false
         
     }
     
